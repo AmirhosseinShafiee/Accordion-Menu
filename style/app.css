@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "poppins";
+	text-transform: capitalize;
+}
+
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background:#c8e8e9;
+	height: 100vh;
+	width: 100vw;
+}
+
+.container{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	gap: 10px;
+	background: #fff;
+	padding:10px;
+	width: 400px;
+	border-radius: 10px;
+	box-shadow: -15px 15px 10px rgba(0, 0, 0, 0.25);
+}
+
+.item{
+	height: 100%;
+	width: 100%;
+	padding:10px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.one{
+	border: 1.5px solid #FFE082;
+	background: #FFF8E1;
+}
+
+.two{
+	border: 1.5px solid #80CBC4;
+	background: #E0F2F1;
+}
+
+.three{
+	border: 1.5px solid #EF9A9A;
+	background: #FFEBEE;
+}
+
+.four{
+	border: 1.5px solid #CE93D8;
+	background: #F3E5F5;
+}
+
+input:checked ~ p:last-child{
+	visibility: visible;
+	height: 80px;
+}
+
+label{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 5px;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+i{
+	font-size: 0.75rem;
+}
+
+i:nth-child(3){
+	display: none;
+}
+
+input:checked + label i:nth-child(2){
+	display: none;
+}
+
+input:checked + label i:nth-child(3){
+	display: block;
+}
+
+p:first-child{
+	font-weight: 500;
+}
+
+
+/*by changing display none to block transition dosent work*/
+p:last-child{
+	/*display: none;*/  /*--->  transition dosent work*/
+	visibility: hidden; /*--->  transition works*/
+	height: 0px;        /*--->  transition works*/
+	font-size: 12px;
+	transition: height 0.35s ease;
+}
